@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playground</title>
+	<style type="text/css">
+		#dissolve{
+			opacity:0;
+			-webkit-transition:opacity 1.0s linear 0s;
+			transition:opacity 1.0s linear 0s;
+		}
+	</style>
+</head>
+<body>
+<h1><span id="dissolve"></span> is fun!</h1>
+<script type="text/javascript">
+	var arr = ["Js", "Ionic Framework", "Angular JS", "NodeJS", "Python"];
+	var span = document.getElementById("dissolve");
+	var step = 0;
+		function show(){
+			if (step < (arr.length - 1)) {
+				step ++
+			} else{
+				step = 0;
+			}
+			setTimeout("show()",2000);
+			span.innerHTML = arr[step];
+			span.style.opacity = 1;
+			console.log(arr[step]);
+		}
+		show();
+</script>
+</body>
+</html>
